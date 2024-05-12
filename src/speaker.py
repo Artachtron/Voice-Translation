@@ -7,6 +7,14 @@ from gtts import gTTS
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+language_map = {
+    "Français": "fr",
+    "English": "en",
+    "Deutsch": "de",
+    "Español": "es",
+    "Hindi": "hi",
+}
+
 
 @dataclass
 class BaseSpeaker:
@@ -17,6 +25,7 @@ class BaseSpeaker:
 @dataclass
 class GoogleSpeaker(BaseSpeaker):
     def speak(self, text: str, language: str) -> str:
+        language = language_map.get(language, "en")
         tts = gTTS(text, lang=language)
         temp_filename: str = ""
 

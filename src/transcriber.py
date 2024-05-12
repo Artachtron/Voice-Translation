@@ -1,11 +1,13 @@
+import logging
 from dataclasses import dataclass, field
 from typing import Any
 
 import numpy as np
 from faster_whisper import WhisperModel
-import logging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
 
 @dataclass
 class BaseTranscriber:
@@ -44,7 +46,6 @@ class WhisperTranscriber(BaseTranscriber):
             processed_data,
             beam_size=self.beam_size,
             chunk_length=self.chunk_length,
-            language=source_language,
         )
 
-        return " ".join((segment.text for segment in segments))
+        return " ".join((segment.text for segment in segments)), info.language
