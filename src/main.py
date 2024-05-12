@@ -1,3 +1,3 @@
 from interface import demo
 
-demo.launch()
+demo.launch(share=True)

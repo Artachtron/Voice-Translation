@@ -35,7 +35,7 @@ class Queue:
 
 @dataclass
 class BaseRecorder:
-    audio_queue: Queue = Queue()
+    audio_queue: Queue = field(default_factory=Queue)
 
     def _record(self, source: Any) -> bytes:
         raise NotImplementedError
