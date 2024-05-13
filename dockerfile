@@ -9,9 +9,7 @@ COPY pyproject.toml ./
 RUN apt-get update
 RUN apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
 
-RUN apt-get update && apt-get install -y \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+
 
 RUN pip install poetry
 RUN poetry install --no-interaction --no-ansi
