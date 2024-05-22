@@ -7,6 +7,8 @@
 - Gradio: Interface
 - Docker: Containerization
 
+![Preview](docs/preview.gif)
+
 ## Description
 This project leverages open-source models to provide real-time speech translation capabilities. Using advanced speech recognition algorithms, it can accurately detect the language spoken in real-time, whether from a microphone input or an audio file. The system then generates synthetic audio and text translations in the target language, all with minimal latency.
 
